@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | InternPath</title>
+    <link rel="stylesheet" href="styles/home.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="logo" href="index.html">InternPath</a>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/browser.html">Browse</a>
+        <a href="pages/application.html">My Application</a>
+        <a href="pages/profile.html">Profile</a>
+        <a href="pages/employer.html">Employer</a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <h1>Internship Portal</h1>
+        <p>
+          Browse internships posted by companies, apply to them, and see your
+          applications on the My Application page.
+        </p>
+      </section>
+      <section class="cta">
+        <a class="btn" href="pages/browser.html">Browse Internships</a>
+        <a class="btn" href="pages/application.html">View My Applications</a>
+        <a class="btn" href="pages/employer.html">Post an Internship (Employer)</a>
+      </section>
+      <div class="image">
+        <img src="assets/pngtree-pen-in-the-hand-internship-concept-teaching-blue-knowledge-photo-image_17643564.jpg" />
+      </div>
+
+      <div class="row">
+        <h2>Featured internships</h2>
+        <a href="pages/browser.html">See all</a>
+      </div>
+      <div class="list">
+        <article class="card" data-category="Technology" data-type="Remote">
+          <div class="badge">B</div>
+          <div class="body">
+            <h3>Frontend Developer Intern</h3>
+            <p class="company">BrightApps · Technology · Remote</p>
+            <p class="stipend">20,000 / month</p>
+            <div class="actions">
+              <button data-action="apply">Apply</button>
+              <button class="ghost" data-action="save">Save ☆</button>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-category="Marketing" data-type="Hybrid">
+          <div class="badge">O</div>
+          <div class="body">
+            <h3>Marketing Intern</h3>
+            <p class="company">Orchid Studio · Marketing · Hybrid</p>
+            <p class="stipend">15,000 / month</p>
+            <div class="actions">
+              <button data-action="apply">Apply</button>
+              <button class="ghost" data-action="save">Save ☆</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>

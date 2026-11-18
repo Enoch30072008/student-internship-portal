@@ -1,0 +1,155 @@
+/* =====================================================
+   FILE : styles/profile.css
+   PAGE : pages/profile.html (Profile)
+   (இந்த file தனியாக வேலை செய்யும் - வேறு CSS file இணைக்கவில்லை)
+
+   பொருளடக்கம் (Contents):
+   1. RESET
+   2. TOP BAR
+   3. PAGE LAYOUT
+   4. BUTTON
+   5. PROFILE PAGE மட்டும் (form)
+   ===================================================== */
+
+/* -----------------------------------------------------
+   RESET - எல்லா page-க்கும் அடிப்படை அமைப்பு
+   ----------------------------------------------------- */
+* {
+  box-sizing: border-box;        /* padding சேர்த்தாலும் பெட்டியின் அகலம் மாறாது */
+  margin: 0;                     /* browser கொடுக்கும் default இடைவெளி நீக்கம் */
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; /* எழுத்து வகை */
+  line-height: 1.55;             /* வரிகளுக்கு இடையே இடைவெளி */
+  min-height: 100vh;             /* குறைந்தது முழு திரை உயரம் */
+  background-color: #f4f1f8;     /* வெளிர் ஊதா பின்னணி */
+}
+
+a {
+  text-decoration: none;         /* link-ல் அடிக்கோடு (underline) வேண்டாம் */
+}
+
+/* -----------------------------------------------------
+   TOP BAR - மேலே இருக்கும் ஊதா பட்டி (logo + menu)
+   ----------------------------------------------------- */
+.topbar {
+  background-color: #35204f;     /* அடர் ஊதா நிறம் */
+  padding: 0 40px;               /* மேல்/கீழ் 0, இடது/வலது 40px */
+  min-height: 62px;              /* பட்டியின் குறைந்தபட்ச உயரம் */
+  display: flex;                 /* logo, menu இரண்டும் ஒரே வரிசையில் */
+  align-items: center;           /* செங்குத்தாக நடுவில் */
+  position: fixed;               /* scroll செய்தாலும் மேலேயே நிற்கும் */
+  width: 100%;                   /* முழு அகலம் */
+}
+
+.logo {
+  color: white;                  /* வெள்ளை எழுத்து */
+  font-weight: 700;              /* தடித்த எழுத்து */
+  font-size: 1.2rem;             /* எழுத்து அளவு */
+}
+
+.topbar nav {
+  display: flex;                 /* menu links ஒரே வரிசையில் */
+  margin-left: auto;             /* menu-ஐ வலது பக்கம் தள்ளும் */
+  align-self: stretch;           /* பட்டியின் முழு உயரம் எடுக்கும் */
+}
+
+.topbar nav a {
+  display: flex;
+  align-items: center;           /* link எழுத்து நடுவில் */
+  padding: 0 16px;               /* link உள்ளே இடைவெளி */
+  margin: 10px;                  /* links இடையே இடைவெளி */
+  color: white;                  /* வெள்ளை எழுத்து */
+  border-radius: 10px;           /* வளைந்த மூலைகள் */
+}
+
+/* mouse மேலே வரும்போது, மற்றும் தற்போதைய page (active) link */
+.topbar nav a:hover,
+.topbar nav a.active {
+  color: #251101;                /* அடர் எழுத்து */
+  background-color: #dccbfa;     /* வெளிர் ஊதா பின்னணி */
+  box-shadow: 5px 5px 2.5px #0b0b0b; /* கீழ்-வலது நிழல் */
+}
+
+.topbar nav a.active {
+  font-weight: 600;              /* active link மட்டும் தடிமன் */
+}
+
+/* -----------------------------------------------------
+   PAGE LAYOUT - page உள்ளடக்கம்
+   ----------------------------------------------------- */
+main {
+  max-width: 1000px;             /* அதிகபட்ச அகலம் */
+  margin: auto;                  /* திரையின் நடுவில் வைக்கும் */
+  padding: 36px 40px 64px;       /* மேல் 36 | இடது-வலது 40 | கீழ் 64 */
+}
+
+h1 {
+  font-size: 1.75rem;            /* பெரிய தலைப்பு */
+  color: #14213d;                /* அடர் நீல நிறம் */
+  margin-top: 50px;              /* fixed top bar-க்கு கீழே இடம் விடும் */
+}
+
+.subtitle {
+  color: #0d1015;                /* கிட்டத்தட்ட கருப்பு */
+  margin: 4px 0 24px;            /* மேல் 4 | இடது-வலது 0 | கீழ் 24 */
+}
+
+/* -----------------------------------------------------
+   BUTTON - எல்லா button-களுக்கும்
+   ----------------------------------------------------- */
+button {
+  font: inherit;                 /* page எழுத்து வகையையே பயன்படுத்தும் */
+  font-weight: 600;              /* தடித்த எழுத்து */
+  font-size: 0.93rem;            /* எழுத்து அளவு */
+  padding: 9px 22px;             /* உள்ளே இடைவெளி: மேல்-கீழ் 9, இடது-வலது 22 */
+  border-radius: 10px;           /* வளைந்த மூலைகள் */
+  cursor: pointer;               /* mouse மேலே வந்தால் கை சின்னம் */
+  text-align: center;            /* எழுத்து நடுவில் */
+}
+
+button:hover {
+  background: #f9a8d400;         /* வெளிப்படையான பின்னணி */
+  border-color: #14213d;         /* border நிறம் */
+  box-shadow: 0 5px 12px rgba(20, 48, 91, 0.18); /* மென்மையான நிழல் */
+}
+
+/* -----------------------------------------------------
+   PROFILE PAGE மட்டும் - form இருக்கும் வெள்ளை பெட்டி
+   ----------------------------------------------------- */
+.profile {
+  max-width: 640px;              /* பெட்டியின் அதிகபட்ச அகலம் */
+  background: #fff;              /* வெள்ளை பெட்டி */
+  border-radius: 6px;            /* சிறிய வளைவு */
+  padding: 22px;                 /* உள்ளே இடைவெளி */
+}
+
+form {
+  display: flex;
+  flex-direction: column;        /* fields மேலிருந்து கீழாக */
+  gap: 16px;                     /* fields இடையே இடைவெளி */
+}
+
+label {
+  display: flex;
+  flex-direction: column;        /* பெயர் மேலே, input கீழே */
+  gap: 6px;                      /* பெயருக்கும் input-க்கும் இடைவெளி */
+  font-weight: 600;              /* பெயர் தடிமன் */
+  font-size: 0.92rem;            /* எழுத்து அளவு */
+}
+
+input,
+textarea {
+  font: inherit;                 /* page எழுத்து வகை */
+  font-weight: 400;              /* உள்ளே எழுதும் எழுத்து சாதாரண தடிமன் */
+  padding: 9px 12px;             /* உள்ளே இடைவெளி */
+  border: 1px solid rgba(228, 176, 228, 0.539); /* மென்மையான இளஞ்சிவப்பு border */
+  border-radius: 16px;           /* வளைந்த மூலைகள் */
+}
+
+form button {
+  padding: 10px;                 /* Save button உள்ளே இடைவெளி */
+  font-size: 1rem;               /* சற்று பெரிய எழுத்து */
+  margin-top: 6px;               /* மேலே இடைவெளி */
+}
